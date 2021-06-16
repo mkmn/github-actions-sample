@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: get time
-        run: echo $(date)
+        run: echo $(date +%Y%m%d-%x)
