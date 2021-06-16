@@ -15,4 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: get time
-        run: echo ${${{ github.event.inputs.name }}:-$(date +%Y%m%d-%s)}
+        run: |
+          name=${{ github.event.inputs.name }}
+          name=${name:-$(date +%Y%m%d-%s)}
+          echo $name
