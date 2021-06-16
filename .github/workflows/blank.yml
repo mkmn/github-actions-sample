@@ -4,6 +4,11 @@ name: CI
 
 on:
   workflow_dispatch:
+    inputs:
+      name:
+        description: input name
+        required: false
+        default: ${{ date +%Y%m%d-%s }}
 
 jobs:
   get-date:
@@ -11,4 +16,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: get time
-        run: echo $(date +%Y%m%d-%x)
+        run: echo $(date +%Y%m%d-%s)
