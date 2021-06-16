@@ -8,7 +8,6 @@ on:
       name:
         description: input name
         required: false
-        default: ${{ date +%Y%m%d-%s }}
 
 jobs:
   get-date:
@@ -16,4 +15,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: get time
-        run: echo $(date +%Y%m%d-%s)
+        run: echo ${${{ github.event.inputs.name }}:-$(date +%Y%m%d-%s)}
