@@ -7,9 +7,8 @@ on:
     paths:
       - '*.txt'
 
-job:
+jobs:
   hello-world:
-    runs-on: ubuntu-latest
-  
-  steps:
-    - run: echo Hello World
+    runs-on: ubuntu-latest 
+    steps:
+      - run: echo Hello World
