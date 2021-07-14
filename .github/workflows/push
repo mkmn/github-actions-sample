@@ -1,0 +1,15 @@
+name: push event
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - *.txt
+
+job:
+  hello-world:
+    runs-on: ubuntu-latest
+  
+  steps:
+    - run: echo Hello World
