@@ -1,0 +1,16 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  output:
+    runs-on: ubuntu-latest
+    steps:
+      - name: output
+        id: job1
+        run: |
+          echo "test=hoge" >> $GITHUB_OUTPUT
+          echo "test=fuga" > $GITHUB_OUTPUT
+      - name: echo
+        run: echo ${{ steps.job1.outputs.test }}
