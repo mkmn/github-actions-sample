@@ -11,6 +11,8 @@ jobs:
         id: job1
         run: |
           echo "test=hoge" >> $GITHUB_OUTPUT
+          echo $GITHUB_OUTPUT
           echo "test=fuga" > $GITHUB_OUTPUT
+          echo $GITHUB_OUTPUT
       - name: echo
         run: echo ${{ steps.job1.outputs.test }}
