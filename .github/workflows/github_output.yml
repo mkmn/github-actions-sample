@@ -1,4 +1,4 @@
-name: CI
+name: Output Sample
 
 on:
   workflow_dispatch:
