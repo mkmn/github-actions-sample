@@ -1,0 +1,11 @@
+name: reusable workflow job
+
+on: workflow_call
+
+jobs:
+  reusable_workflow_job:
+    environment: test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ vars.TEST_ENV }}
+      - run: echo ${{ secrets.TEST_SECRET }}

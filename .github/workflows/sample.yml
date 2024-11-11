@@ -1,0 +1,8 @@
+name: Sample
+
+on: workflow_dispatch
+
+jobs:
+  sample:
+    uses: ./.github/workflows/workflow_call.yml
+    secrets: inherit # pass all secrets
