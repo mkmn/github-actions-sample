@@ -16,15 +16,14 @@ jobs:
       - name: next step
         id: next-step
         if: steps.error_step.outcome == 'failure'
-        run: echo "need_release=true" >> $GITHUB_OUTPUT
+        run: echo "hoge"
   step2:
     runs-on: ubuntu-latest
     needs: step1
+    if: ${{ needs.step1.outputs.need_release == 'true' }}
     env:
       NEEDS_CONTEXT: ${{ toJson(needs) }}
     steps:
       - run: echo "$NEEDS_CONTEXT"
-      - run: echo ${{ needs.step1.outputs.need_release }}
       - name: hoge
-        if: ${{ needs.step1.outputs.need_release == 'true' }}
         run: echo "run"
